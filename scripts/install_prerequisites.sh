@@ -116,6 +116,7 @@ if [[ "$MANAGER" == "apt" ]]; then
     PKGS_UPDATE="apt update"
     PKGS_OPTIONS+=(install --no-install-suggests --no-install-recommends)
     if ((DRYRUN > 0));  then PKGS_OPTIONS+=(--dry-run); fi
+    PKGS_OPTIONS+=(-y)
     PKGS_REQUIRED+=(libgl1-mesa-dev libwayland-dev libxkbcommon-dev wayland-protocols libegl1-mesa-dev)
     PKGS_REQUIRED+=(libc++-dev libglew-dev libeigen3-dev cmake g++ ninja-build)
     PKGS_RECOMMENDED+=(libjpeg-dev libpng-dev)
